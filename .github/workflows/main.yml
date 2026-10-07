@@ -5,50 +5,51 @@ on:
     branches:
       - main
 
-job-1:
-  print-message:
-    runs-on: ubuntu-latest
+jobs:
 
+  job-1:
+    name: Print Message Job 1
+    runs-on: ubuntu-latest
     steps:
       - name: Print welcome message
         run: echo "Welcome to GitHub Action"
-job-2:
-  needs:job-1
-  print-message:
-    runs-on: ubuntu-latest
 
+  job-2:
+    needs: job-1
+    name: Print Message Job 2
+    runs-on: ubuntu-latest
     steps:
       - name: Print welcome message
         run: echo "Welcome to GitHub Action"
-job-3:
-  needs:job-1
-  print-message:
-    runs-on: ubuntu-latest
 
+  job-3:
+    needs: job-1
+    name: Print Message Job 3
+    runs-on: ubuntu-latest
     steps:
       - name: Print welcome message
-        run: echo "Welcome to GitHub Action"   
-job-4:
-  needs:job-2
-  print-message:
-    runs-on: ubuntu-latest
+        run: echo "Welcome to GitHub Action"
 
+  job-4:
+    needs: job-2
+    name: Print Message Job 4
+    runs-on: ubuntu-latest
     steps:
       - name: Print welcome message
-        run: echo "Welcome to GitHub Action"   
-job-5:
-  needs:job-3
-  print-message:
-    runs-on: ubuntu-latest
+        run: echo "Welcome to GitHub Action"
 
+  job-5:
+    needs: job-3
+    name: Print Message Job 5
+    runs-on: ubuntu-latest
     steps:
       - name: Print welcome message
-        run: echo "Welcome to GitHub Action"  
-job-6:
-  needs:[job-4,job-5]
-  print-message:
-    runs-on: ubuntu-latest
+        run: echo "Welcome to GitHub Action"
 
+  job-6:
+    needs: [job-4, job-5]
+    name: Print Message Job 6
+    runs-on: ubuntu-latest
     steps:
       - name: Print welcome message
-        run: echo "Welcome to GitHub Action"                                
+        run: echo "Welcome to GitHub Action"
