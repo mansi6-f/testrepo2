@@ -10,5 +10,5 @@ jobs:
   print-message:
     runs-on: ubuntu-latest
         
-      - name: print welcome-message
+      - name: print welcome message
         run: echo 'Welcome to Github Action'
