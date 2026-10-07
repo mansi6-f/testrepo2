@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
         
       - name: print welcome message
-        run: echo 'Welcome to Github Action'
+          run: echo 'Welcome to Github Action'
