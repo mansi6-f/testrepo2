@@ -5,10 +5,50 @@ on:
     branches:
       - main
 
-jobs:
+job-1:
   print-message:
     runs-on: ubuntu-latest
 
     steps:
       - name: Print welcome message
         run: echo "Welcome to GitHub Action"
+job-2:
+  needs:job-1
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print welcome message
+        run: echo "Welcome to GitHub Action"
+job-3:
+  needs:job-1
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print welcome message
+        run: echo "Welcome to GitHub Action"   
+job-4:
+  needs:job-2
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print welcome message
+        run: echo "Welcome to GitHub Action"   
+job-5:
+  needs:job-3
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print welcome message
+        run: echo "Welcome to GitHub Action"  
+job-6:
+  needs:[job-4,job-5]
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print welcome message
+        run: echo "Welcome to GitHub Action"                                
